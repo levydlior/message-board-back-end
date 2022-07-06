@@ -8,10 +8,10 @@ User.create(user_name: "Peter", password: "griffin", avatar_url: 'https://static
 User.create(user_name: "Duby", password: "master", avatar_url: 'https://static.wikia.nocookie.net/harrypotter/images/8/82/Dobby.jpg/revision/latest?cb=20161215055153')
 
 
-Message.create(content: 'laba daba dub dub!', user_id: 1)
-Message.create(content: 'I got the munchees brah!', user_id: 2)
-Message.create(content: 'Duby can bring master food!', user_id: 4)
-Message.create(content: 'Hi guys- who wants to go to a bar?!', user_id: 3)
-Message.create(content: 'Have anyone seen *broughh* Morty?', user_id: 1)
+Message.create(content: 'laba daba dub dub!', user_id: 1, user_name: User.find(1).user_name, avatar_url: User.find(1).avatar_url)
+Message.create(content: 'I got the munchees brah!', user_id: 2, user_name: User.find(2).user_name, avatar_url: User.find(2).avatar_url)
+Message.create(content: 'Duby can bring master food!', user_id: 4, user_name: User.find(4).user_name, avatar_url: User.find(4).avatar_url)
+Message.create(content: 'Hi guys- who wants to go to a bar?!', user_id: 3, user_name: User.find(3).user_name, avatar_url: User.find(3).avatar_url)
+Message.create(content: 'Have anyone seen *broughh* Morty?', user_id: 1, user_name: User.find(1).user_name, avatar_url: User.find(1).avatar_url)
 
 puts "✅ Done seeding!"
