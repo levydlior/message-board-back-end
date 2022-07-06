@@ -4,15 +4,15 @@ class ApplicationController < Sinatra::Base
   #messages CRUD: 
 
   get "/message_board" do
-    messages = Message.all.order(:created_at)
-    messages.to_json
+    messages = Message.get_info_from_messages
+     messages.to_json
   end
 
  
 
   post "/message/post" do
     user = User.find(params[:userId])
-    message = Message.create(content: params[:content], user_id: user.id, user_name: user.user_name, avatar_url: user.avatar_url )
+    message = Message.create(content: params[:content], user_id: user.id)
     message.to_json
   end
 
