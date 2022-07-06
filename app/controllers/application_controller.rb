@@ -1,14 +1,12 @@
 class ApplicationController < Sinatra::Base
   set :default_content_type, "application/json"
 
-  #messages CRUD: 
+  #messages CRUD:
 
   get "/message_board" do
     messages = Message.get_info_from_messages
-     messages.to_json
+    messages.to_json
   end
-
- 
 
   post "/message/post" do
     user = User.find(params[:userId])
@@ -36,8 +34,13 @@ class ApplicationController < Sinatra::Base
   end
 
   post "/user/create" do
-    user = User.create(user_name: params[:userName], password: params[:password], avatar_url: params[:image])
-    user.to_json
+    valid_user_name = User.find_by(user_name: params[:userName])
+    if (valid_user_name)
+       "failed".to_json
+     else
+      user = User.create(user_name: params[:userName], password: params[:password], avatar_url: params[:avatarUrl])
+      user.to_json
+    end
   end
 
   delete "/user/delete/:id" do
@@ -45,5 +48,4 @@ class ApplicationController < Sinatra::Base
     user.destroy
     user.to_json
   end
-
 end
