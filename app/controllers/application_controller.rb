@@ -9,9 +9,10 @@ class ApplicationController < Sinatra::Base
   end
 
   post "/message/post" do
-    user = User.find(params[:userId])
-    message = Message.create(content: params[:content], user_id: user.id)
-    message.to_json
+    message = Message.create(content: params[:content], user_id: params[:userId])
+    message_details_to_return = message.get_info_for_post
+    message_details_to_return.to_json
+   
   end
 
   patch "/message/update" do
@@ -36,8 +37,8 @@ class ApplicationController < Sinatra::Base
   post "/user/create" do
     valid_user_name = User.find_by(user_name: params[:userName])
     if (valid_user_name)
-       "failed".to_json
-     else
+      "failed".to_json
+    else
       user = User.create(user_name: params[:userName], password: params[:password], avatar_url: params[:avatarUrl])
       user.to_json
     end
