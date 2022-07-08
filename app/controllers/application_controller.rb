@@ -12,7 +12,6 @@ class ApplicationController < Sinatra::Base
     message = Message.create(content: params[:content], user_id: params[:userId])
     message_details_to_return = message.get_info_for_post
     message_details_to_return.to_json
-   
   end
 
   patch "/message/update/:id" do
@@ -29,6 +28,12 @@ class ApplicationController < Sinatra::Base
   end
 
   #user:
+
+  get "/user/:id" do
+    user = User.find(params[:id])
+    user.to_json
+  end
+
   post "/user/login" do
     user = User.find_by(user_name: params[:userName], password: params[:password])
     user.to_json
@@ -49,4 +54,7 @@ class ApplicationController < Sinatra::Base
     user.destroy
     user.to_json
   end
+
+
+
 end
