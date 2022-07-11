@@ -73,6 +73,10 @@ It was interesting and definitely challenging to work on this project by myself.
 Created by <br>
 <a href="https://www.linkedin.com/in/liordl/" target="_blank">Lior Levy</a><br>
  
+ To see it in action: 
+ <a href="https://www.loom.com/share/bb262cb67a3a4f34afcc49eb7fd89d8b" target="_blank">Video example</a><br>
+ 
+ 
 web logo has been taken from:
 https://www.vectorstock.com/royalty-free-vector/items-pinned-to-a-cork-message-board-vector-7624281
  
