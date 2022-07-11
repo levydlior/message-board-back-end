@@ -36,6 +36,7 @@ This app is designed to imitate a message board app where people can leave a mes
 To run this project: <ol>
  
   <li>Clone the repo to your computer</li>
+  <li>Clone  <a href="https://github.com/levydlior/message-board-front-end" target="_blank">This repo (front end)</a><br> repo to the same directory as the message board back end</li>
   <li>Go to the Message Board front end directory and npm install</li>
   <li>Still in the same directory run npm start to run the react app</li>
   <li>Go to the Message Board back end directory and bundle install</li>
