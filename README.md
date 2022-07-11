@@ -76,6 +76,6 @@ Created by <br>
 web logo has been taken from:
 https://www.vectorstock.com/royalty-free-vector/items-pinned-to-a-cork-message-board-vector-7624281
  
-![Message Board Web](./../message-board/src/images/msg-board.png "Message Board")
+![Message Board Web](./msg-board.png "Message Board")
  
 
